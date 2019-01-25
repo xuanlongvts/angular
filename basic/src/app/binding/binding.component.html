@@ -1,0 +1,25 @@
+<p>
+    <input type="text" [value]="bindingVal" />
+    <input type="text" placeholder="bindingVal" />
+    <input type="text" [placeholder]="bindingVal" />
+</p>
+
+<p>Click: <button (click)="handeClick()">Click to me</button></p>
+
+<!-- Deprecated use-->
+<p>Change value (senario 1): <input type="text" (keyup)="handleChange1($event)" /></p>
+
+<p>Change value (senario 1): <input type="text" #change2 (keyup)="handleChange2(change2.value)" /></p>
+
+<!-- Binding 2 chieu -->
+<p>
+    Binding 2 chieu: <input type="text" name="bingdingTwoWay" [(ngModel)]="txtChange" /> <br />
+
+    <span>Value change: {{ txtChange }}</span>
+</p>
+
+<p>==========================================================================</p>
+<div *ngIf="bindingVal">
+    <!-- Chỗ này là gọi directive ngIf để kiểm tra điều kiện if ngay ở html -->
+    Binding value: {{ bindingVal }}
+</div>
