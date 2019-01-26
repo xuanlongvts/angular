@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { TimeService } from '../services/time.service';
 
 @Component({
     selector: 'app-binding',
     templateUrl: './binding.component.html',
     styleUrls: ['./binding.component.scss'],
+    providers: [TimeService],
 })
 export class BindingComponent implements OnInit {
     bindingVal = 'Xin chao';
 
-    constructor() {}
+    timeValue: string;
+
+    constructor(private time: TimeService) {
+        this.timeValue = time.getTime();
+    }
 
     ngOnInit() {}
 

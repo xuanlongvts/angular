@@ -23,3 +23,13 @@
     <!-- Chỗ này là gọi directive ngIf để kiểm tra điều kiện if ngay ở html -->
     Binding value: {{ bindingVal }}
 </div>
+
+<p>==========================================================================</p>
+<div *ngIf="timeValue">
+    {{ timeValue }}
+</div>
+
+<p>Ng-if… else ==========================================================================</p>
+<div *ngIf="isTrue; then hasTimeValue; else noTimeValue">Time: {{ timeValue }}</div>
+<ng-template #hasTimeValue>hasTimeValue</ng-template>
+<ng-template #noTimeValue>noTimeValue</ng-template>
