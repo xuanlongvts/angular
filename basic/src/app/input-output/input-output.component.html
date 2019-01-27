@@ -1,0 +1,9 @@
+<hr />
+<h2>Couting from input-output Component:</h2>
+
+<input type="number" #inputNumber [value]="initNumber" (keyup)="handleKeyup(inputNumber.value)" />
+
+<div class="listBtn">
+    <button (click)="handleIncrement()">increment</button>
+    <button (click)="handleDecrement()">decrement</button>
+</div>

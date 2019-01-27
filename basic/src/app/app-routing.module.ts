@@ -7,6 +7,10 @@ const routes: Routes = [
         loadChildren: './binding/binding.module#BindingModule',
     },
     {
+        path: 'input-output',
+        loadChildren: './input-output/input-output.module#InputOutputModule',
+    },
+    {
         path: '',
         redirectTo: '',
         pathMatch: 'full',

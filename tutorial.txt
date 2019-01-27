@@ -1,0 +1,23 @@
+ng g c example      // Generate component with name example
+ng g m example      // Generate module with name example
+ng g m example --routing      // Generate routing with name example
+
+
+ng: angular
+g: generate
+c: component
+m: module
+
+tip: ng g m example --routing && ng g c example
+
+
+
+cd file example-routing.module.ts  update router 
+
+import { ExampleComponent } from './input-output.component';
+const routes: Routes = [
+    {
+        path: '',
+        component: ExampleComponent,
+    },
+];

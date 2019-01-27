@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'Hello';
+
+    public initCounter: number = 10;
+    public parentNumber: number = this.initCounter;
+
+    handleChange(num: any) {
+        typeof num === 'object' && (num = num.target.value);
+        this.parentNumber = num;
+    }
 }

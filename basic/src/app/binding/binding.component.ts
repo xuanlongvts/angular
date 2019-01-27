@@ -5,7 +5,6 @@ import { TimeService } from '../services/time.service';
     selector: 'app-binding',
     templateUrl: './binding.component.html',
     styleUrls: ['./binding.component.scss'],
-    providers: [TimeService],
 })
 export class BindingComponent implements OnInit {
     bindingVal = 'Xin chao';

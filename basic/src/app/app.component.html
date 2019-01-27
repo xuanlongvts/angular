@@ -1,8 +1,16 @@
-<h1>
-    {{ title }}
-</h1>
+<h1>Home page: {{ title }}</h1>
+<button routerLink="" class="nav" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</button>
+<button routerLink="/binding" class="nav" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+    Biding and Diretive
+</button>
+<button routerLink="/input-output" class="nav" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+    Input & Output
+</button>
 
-<button routerLink="">Home</button>
-<button routerLink="/binding">Biding</button>
+<div class="inputOutput">
+    <app-input-output [init]="initCounter" (change)="handleChange($event)"></app-input-output>
+</div>
+<br />
+<div><strong>Parent number:</strong> {{ parentNumber }}</div>
 
 <router-outlet></router-outlet>

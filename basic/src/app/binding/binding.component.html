@@ -9,7 +9,7 @@
 <!-- Deprecated use-->
 <p>Change value (senario 1): <input type="text" (keyup)="handleChange1($event)" /></p>
 
-<p>Change value (senario 1): <input type="text" #change2 (keyup)="handleChange2(change2.value)" /></p>
+<p>Change value (senario 2): <input type="text" #change2 (keyup)="handleChange2(change2.value)" /></p>
 
 <!-- Binding 2 chieu -->
 <p>
@@ -29,7 +29,18 @@
     {{ timeValue }}
 </div>
 
+<p>==========================================================================</p>
+<div *ngIf="title; else noTitle">Time: {{ timeValue }}</div>
+<ng-template #noTitle> Click on the button to see time. </ng-template>
+
 <p>Ng-if… else ==========================================================================</p>
 <div *ngIf="isTrue; then hasTimeValue; else noTimeValue">Time: {{ timeValue }}</div>
 <ng-template #hasTimeValue>hasTimeValue</ng-template>
 <ng-template #noTimeValue>noTimeValue</ng-template>
+
+<p>ngSwitch ================================================</p>
+<div [ngSwitch]="isMetric">
+    <div *ngSwitchCase="true">ngSwith true</div>
+    <div *ngSwitchCase="false">ngSwith false</div>
+    <div *ngSwitchDefault>ngSwitchDefault</div>
+</div>
