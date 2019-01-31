@@ -11,6 +11,10 @@ const routes: Routes = [
         loadChildren: './input-output/input-output.module#InputOutputModule',
     },
     {
+        path: 'view-child',
+        loadChildren: './view-child/view-child.module#ViewChildModule',
+    },
+    {
         path: '',
         redirectTo: '',
         pathMatch: 'full',

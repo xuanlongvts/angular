@@ -6,25 +6,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     styleUrls: ['./input-output.component.scss'],
 })
 export class InputOutputComponent implements OnInit {
-    @Input('init') private initNumber: number; // alias from init to initNumber
-    @Output() change: EventEmitter<number> = new EventEmitter<number>();
+    public initCounter: number = 10;
+    public parentNumber: number = this.initCounter;
 
-    constructor() {}
-
-    handleIncrement() {
-        this.initNumber++;
-        this.change.emit(this.initNumber);
+    handleChange(num: any) {
+        typeof num === 'object' && (num = num.target.value);
+        this.parentNumber = num;
     }
-
-    handleDecrement() {
-        this.initNumber--;
-        this.change.emit(this.initNumber);
-    }
-
-    handleKeyup(num: number) {
-        this.initNumber = num;
-        this.change.emit(num);
-    }
-
     ngOnInit() {}
 }

@@ -4,12 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { InputOutputRoutingModule } from './input-output/input-output-routing.module';
-import { InputOutputComponent } from './input-output/input-output.component';
-
 @NgModule({
-    declarations: [AppComponent, InputOutputComponent],
-    imports: [BrowserModule, AppRoutingModule, InputOutputRoutingModule],
+    declarations: [AppComponent],
+    imports: [BrowserModule, AppRoutingModule],
     providers: [],
     bootstrap: [AppComponent],
 })

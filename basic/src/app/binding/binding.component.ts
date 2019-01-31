@@ -22,7 +22,7 @@ export class BindingComponent implements OnInit {
     }
 
     handleChange1(event: Event) {
-        console.log('value 1 change: ', event.target.value);
+        // console.log('value 1 change: ', event.target.value);
     }
 
     handleChange2(val: any) {

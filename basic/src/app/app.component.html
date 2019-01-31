@@ -1,4 +1,5 @@
 <h1>Home page: {{ title }}</h1>
+
 <button routerLink="" class="nav" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</button>
 <button routerLink="/binding" class="nav" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
     Biding and Diretive
@@ -6,11 +7,14 @@
 <button routerLink="/input-output" class="nav" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
     Input & Output
 </button>
-
-<div class="inputOutput">
-    <app-input-output [init]="initCounter" (change)="handleChange($event)"></app-input-output>
-</div>
-<br />
-<div><strong>Parent number:</strong> {{ parentNumber }}</div>
+<button routerLink="/view-child" class="nav" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+    View child
+</button>
+<button routerLink="/angular-cycle" class="nav" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+    Lifecycle
+</button>
+<button routerLink="/rxjs" class="nav" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+    RxJS
+</button>
 
 <router-outlet></router-outlet>
