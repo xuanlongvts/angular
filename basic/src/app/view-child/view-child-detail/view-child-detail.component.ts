@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./view-child-detail.component.scss'],
 })
 export class ViewChildDetailComponent implements OnInit {
-    public value = 0;
+    public value: number = 0;
 
     constructor() {}
 

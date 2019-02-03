@@ -8,8 +8,7 @@ import { ViewChildDetailComponent } from './view-child-detail/view-child-detail.
 })
 export class ViewChildComponent implements OnInit {
     constructor() {}
-    @ViewChild(ViewChildDetailComponent)
-    myChild: ViewChildComponent;
+    @ViewChild(ViewChildDetailComponent) myChild: ViewChildDetailComponent;
 
     handleAddChildSena1(isAdd: boolean) {
         if (isAdd) {
