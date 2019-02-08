@@ -1,0 +1,14 @@
+<hr />
+<h3>Response From API</h3>
+
+<div *ngIf="showAsync" class="loading">
+    <p>Loading...</p>
+</div>
+
+<div *ngFor="let item of data">
+    <p>{{ item.body }}</p>
+</div>
+<hr />
+<div *ngFor="let item of (response | async)">
+    <strong>{{ item.body }}</strong>
+</div>

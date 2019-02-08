@@ -1,0 +1,9 @@
+<hr />
+<p><strong>birthday:</strong> {{ birthday | date: 'shortTime' }}</p>
+<p><strong>person:</strong> {{ person | json }}</p>
+<p><strong>person:</strong> {{ person | json | uppercase }}</p>
+<p><strong>Name:</strong> {{ person.name | uppercase }}</p>
+<p><strong>Address:</strong> {{ address | async }}</p>
+
+<p><strong>Number: </strong> {{ 1.9 | roundNumber: true:10 }}</p>
+<p><strong>Number: </strong> {{ 3.5 | roundNumber: false:1 }}</p>

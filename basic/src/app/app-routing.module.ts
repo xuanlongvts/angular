@@ -13,8 +13,16 @@ const routes: Routes = [
         loadChildren: './input-output/input-output.module#InputOutputModule',
     },
     {
+        path: 'pipe',
+        loadChildren: './pipe/pipes.module#PipesModule',
+    },
+    {
         path: 'view-child',
         loadChildren: './view-child/view-child.module#ViewChildModule',
+    },
+    {
+        path: 'service-http',
+        loadChildren: './service-http/service-http.module#ServiceHttpModule',
     },
     {
         path: 'rxjs',

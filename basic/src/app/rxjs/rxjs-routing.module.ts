@@ -14,7 +14,11 @@ import { OfComponent } from './of/of.component';
 import { MapToComponent } from './map-to/map-to.component';
 import { WithLatestFromComponent } from './with-latest-from/with-latest-from.component';
 import { TimerComponent } from './timer/timer.component';
+import { TapComponent } from './tap/tap.component';
+import { TakeComponent } from './take/take.component';
 import { TakeWhileComponent } from './take-while/take-while.component';
+import { MergeMapComponent } from './merge-map/merge-map.component';
+import { ForkJoinComponent } from './fork-join/fork-join.component';
 
 const routes: Routes = [
     {
@@ -66,8 +70,24 @@ const routes: Routes = [
         component: TimerComponent,
     },
     {
+        path: 'tap',
+        component: TapComponent,
+    },
+    {
+        path: 'take',
+        component: TakeComponent,
+    },
+    {
         path: 'takewhile',
         component: TakeWhileComponent,
+    },
+    {
+        path: 'mergemap',
+        component: MergeMapComponent,
+    },
+    {
+        path: 'forkjoin',
+        component: ForkJoinComponent,
     },
 ];
 

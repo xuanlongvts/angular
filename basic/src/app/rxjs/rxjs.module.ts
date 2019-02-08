@@ -16,6 +16,10 @@ import { MapToComponent } from './map-to/map-to.component';
 import { WithLatestFromComponent } from './with-latest-from/with-latest-from.component';
 import { TimerComponent } from './timer/timer.component';
 import { TakeWhileComponent } from './take-while/take-while.component';
+import { MergeMapComponent } from './merge-map/merge-map.component';
+import { TakeComponent } from './take/take.component';
+import { TapComponent } from './tap/tap.component';
+import { ForkJoinComponent } from './fork-join/fork-join.component';
 
 @NgModule({
     declarations: [
@@ -32,6 +36,10 @@ import { TakeWhileComponent } from './take-while/take-while.component';
         WithLatestFromComponent,
         TimerComponent,
         TakeWhileComponent,
+        MergeMapComponent,
+        TakeComponent,
+        TapComponent,
+        ForkJoinComponent,
     ],
     imports: [CommonModule, RxjsRoutingModule],
 })
