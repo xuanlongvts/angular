@@ -1,6 +1,6 @@
 export interface data {
     userId: number;
-    Id: number;
+    id: number;
     title: string;
     body: string;
 }

@@ -5,10 +5,22 @@
     <p>Loading...</p>
 </div>
 
+<div *ngIf="isShowForm">
+    <input type="text" placeholder="Title" [(ngModel)]="titleNew" />
+    <input type="text" placeholder="Body" [(ngModel)]="bodyNew" />
+</div>
+<div>
+    <button (click)="handleAddNew()" class="btnAddNew">Add new</button>
+</div>
+
 <div *ngFor="let item of data">
-    <p>{{ item.body }}</p>
+    <p>
+        <strong>Title {{ item.id }}: </strong>{{ item.title }} <span (click)="handleDelete(item.id)" class="btnDelte">Delete</span>
+    </p>
 </div>
 <hr />
 <div *ngFor="let item of (response | async)">
-    <strong>{{ item.body }}</strong>
+    <p>
+        <strong>Body {{ item.id }}: </strong>{{ item.body }}
+    </p>
 </div>

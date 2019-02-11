@@ -11,6 +11,9 @@ import { ShareService } from './share-service';
     styleUrls: ['./service-http.component.scss'],
 })
 export class ServiceHttpComponent implements OnInit {
+    public isShowForm: boolean = false;
+    public titleNew: string = '';
+    public bodyNew: string = '';
     public show: boolean;
     public showAsync: boolean;
     public response: Observable<data[]>;
@@ -31,9 +34,31 @@ export class ServiceHttpComponent implements OnInit {
 
     onSubscribe() {
         this.service.getData().subscribe(res => {
+            console.log('res: ', res);
             this.data = res;
             this.show = true;
             this.showAsync = false;
         });
+    }
+
+    handleAddNew() {
+        this.isShowForm = true;
+        if (this.titleNew && this.bodyNew) {
+            this.data.unshift({
+                id: Math.random(),
+                userId: 1000,
+                title: this.titleNew,
+                body: this.bodyNew,
+            });
+            this.titleNew = '';
+            this.bodyNew = '';
+
+            this.isShowForm = false;
+        }
+    }
+
+    handleDelete(id: number) {
+        const findIndex = this.data.findIndex((item: any) => item.id === id);
+        this.data.splice(findIndex, 1);
     }
 }
