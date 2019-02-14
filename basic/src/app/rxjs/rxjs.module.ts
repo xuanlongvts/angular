@@ -20,6 +20,7 @@ import { MergeMapComponent } from './merge-map/merge-map.component';
 import { TakeComponent } from './take/take.component';
 import { TapComponent } from './tap/tap.component';
 import { ForkJoinComponent } from './fork-join/fork-join.component';
+import { ShareComponent } from './share/share.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { ForkJoinComponent } from './fork-join/fork-join.component';
         TakeComponent,
         TapComponent,
         ForkJoinComponent,
+        ShareComponent
     ],
     imports: [CommonModule, RxjsRoutingModule],
 })

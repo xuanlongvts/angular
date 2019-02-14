@@ -19,6 +19,7 @@ import { TakeComponent } from './take/take.component';
 import { TakeWhileComponent } from './take-while/take-while.component';
 import { MergeMapComponent } from './merge-map/merge-map.component';
 import { ForkJoinComponent } from './fork-join/fork-join.component';
+import { ShareComponent } from './share/share.component';
 
 const routes: Routes = [
     {
@@ -84,6 +85,10 @@ const routes: Routes = [
     {
         path: 'mergemap',
         component: MergeMapComponent,
+    },
+    {
+        path: 'share',
+        component: ShareComponent,
     },
     {
         path: 'forkjoin',

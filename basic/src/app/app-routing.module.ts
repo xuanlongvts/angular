@@ -29,6 +29,14 @@ const routes: Routes = [
         loadChildren: './rxjs/rxjs.module#RxjsModule',
     },
     {
+        path: 'angular-cycle',
+        loadChildren: './angular-cycle/angular-cycle.module#AngularCycleModule',
+    },
+    {
+        path: 'material',
+        loadChildren: './material/material.module#MaterialModule',
+    },
+    {
         path: '',
         redirectTo: '',
         pathMatch: 'full',

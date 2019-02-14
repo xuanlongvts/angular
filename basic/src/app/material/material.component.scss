@@ -1,0 +1,13 @@
+.nav-sub {
+    button {
+        padding: 3px 7px;
+        border-radius: 3px;
+        margin-right: 5px;
+        outline: none;
+
+        &:hover,
+        &.curr {
+            background-color: #ccc;
+        }
+    }
+}

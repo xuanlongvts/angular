@@ -1,0 +1,82 @@
+<hr />
+<div>
+    <button (click)="add()">Click add</button>
+    <p>
+        <strong>Number add: {{ numShow }}</strong>
+    </p>
+</div>
+
+<h3>8 Lifecycle Hooks</h3>
+<ul>
+    <li>
+        ngOnChanges()
+        <ul>
+            <li>Used in pretty much any component that has an input.</li>
+            <li>Called whenever an input value changes</li>
+            <li>Is called the first time before ngOnInit</li>
+        </ul>
+    </li>
+</ul>
+<ul>
+    <li>
+        ngOnInit()
+        <ul>
+            <li>Used to initialize data in a component.</li>
+            <li>Called after input values are set when a component is initialized.</li>
+            <li>Added to every component by default by the Angular CLI.</li>
+            <li>Called only once</li>
+        </ul>
+    </li>
+    <li>
+        ngDoCheck()
+        <ul>
+            <li>
+                Called during all change detection runs
+                <ul>
+                    <li>A run through the view by Angular to update/detect changes</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        ngAfterContentInit()
+        <ul>
+            <li>Called only once after first ngDoCheck()</li>
+            <li>Called after the first run through of initializing content</li>
+        </ul>
+    </li>
+    <li>
+        ngAfterContentChecked()
+        <ul>
+            <li>Called after every ngDoCheck()</li>
+            <li>Waits till after ngAfterContentInit() on first run through</li>
+        </ul>
+    </li>
+    <li>
+        ngAfterViewInit()
+        <ul>
+            <li>Called after Angular initializes component and child component content.</li>
+            <li>Called only once after view is initialized</li>
+        </ul>
+    </li>
+    <li>
+        ngAfterViewChecked()
+        <ul>
+            <li>Called after all the content is initialized and checked. (Component and child components).</li>
+            <li>First call is after ngAfterViewInit()</li>
+            <li>Called after every ngAfterContentChecked() call is completed</li>
+        </ul>
+    </li>
+    <li>
+        ngOnDestroy()
+        <ul>
+            <li>
+                <code></code>Used to clean up any necessary code when a component is removed from the DOM.
+                <ul>
+                    <li>Fairly often used to unsubscribe from things like services.</li>
+                </ul>
+            </li>
+            <li>Called only once just before component is removed from the DOM.</li>
+        </ul>
+    </li>
+</ul>

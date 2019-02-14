@@ -1,0 +1,257 @@
+<app-material></app-material>
+<mat-card class="card-demo">
+    <mat-card-title>Layout Children with 'layout-align'</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+    <mat-card-content>
+        <div class="containerX">
+            <div class="colorNested box" [class.taller]="options.direction != 'row'">
+                <div [fxLayout]="options.direction" [fxLayoutAlign]="layoutAlign()" style="height: 100%;">
+                    <div class="blocks one">1</div>
+                    <div class="blocks" [class.two_h]="options.direction == 'row'" [class.two_w]="options.direction != 'row'">2</div>
+                    <div class="blocks three">3</div>
+                    <div class="blocks" [class.four_h]="options.direction == 'row'" [class.four_w]="options.direction != 'row'">4</div>
+                    <div class="blocks fives">5</div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions fxLayout="row" fxLayoutAlign="center" fxHide fxHide.gt-sm="false">
+        <form fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around stretch" class="demo_controls">
+            <div>
+                <div>Layout Direction</div>
+                <mat-radio-group [(ngModel)]="options.direction" name="direction" fxLayout="column">
+                    <mat-radio-button value="row">row</mat-radio-button>
+                    <mat-radio-button value="column">column</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div>
+                <div>Alignment in Layout Direction ({{ options.direction == 'row' ? 'horizontal' : 'vertical' }})</div>
+                <mat-radio-group [(ngModel)]="options.mainAxis" name="mainAxis" fxLayout="column">
+                    <mat-radio-button value="">none</mat-radio-button>
+                    <mat-radio-button value="start">start (default)</mat-radio-button>
+                    <mat-radio-button value="center">center</mat-radio-button>
+                    <mat-radio-button value="end">end</mat-radio-button>
+                    <mat-radio-button value="space-around">space-around</mat-radio-button>
+                    <mat-radio-button value="space-between">space-between</mat-radio-button>
+                    <mat-radio-button value="space-evenly">space-evenly</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div>
+                <div>Alignment in Perpendicular Direction ({{ options.direction == 'column' ? 'horizontal' : 'vertical' }})</div>
+                <mat-radio-group [(ngModel)]="options.crossAxis" name="crossAxis" fxLayout="column">
+                    <mat-radio-button value="none"><em>none</em></mat-radio-button>
+                    <mat-radio-button value="start">start</mat-radio-button>
+                    <mat-radio-button value="center">center</mat-radio-button>
+                    <mat-radio-button value="end">end</mat-radio-button>
+                    <mat-radio-button value="stretch">stretch (default)</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </form>
+    </mat-card-actions>
+    <mat-card-footer style="width:95%;">
+        <div class="hint forceAbove" style="padding-left:50px;">
+            &lt;div fxLayout="{{ options.direction }}"
+            <span style="padding-left: 30px">fxLayoutAlign="{{ layoutAlign() }}"</span>
+            &gt;
+        </div>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-demo">
+    <mat-card-title><a href="" target="_blank">Layout Fill</a></mat-card-title>
+    <mat-card-subtitle>Using 'fxFill' to fill available width and height of parent container. </mat-card-subtitle>
+    <mat-card-content class="large">
+        <div fxLayout="column" fxFill>
+            <div fxLayout fxFlex>
+                <div class="one" fxFlex="20" fxLayoutAlign="center center">A</div>
+                <div class="two" fxFlex="80" fxLayoutAlign="center center">B</div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-footer class="bottomPad">
+        <div class="hint"></div>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-demo">
+    <mat-card-title><a href="" target="_blank">Layout Gap</a></mat-card-title>
+    <mat-card-subtitle>Using 'fxLayoutGap' to create a grid-like layout </mat-card-subtitle>
+    <mat-card-content class="large">
+        <div fxFlexFill>
+            <div
+                fxFlexFill
+                [fxLayout]="layoutGrap.direction + ' wrap'"
+                fxLayoutGap="10px grid"
+                style="cursor: pointer;"
+                (click)="toggleDirection()"
+            >
+                <div fxFlex="25">
+                    <div class="one" fxFlexFill fxLayoutAlign="center center">
+                        A
+                    </div>
+                </div>
+                <div fxFlex="25">
+                    <div class="two" fxFlexFill fxLayoutAlign="center center">
+                        B
+                    </div>
+                </div>
+                <div fxFlex="25">
+                    <div class="three" fxFlexFill fxLayoutAlign="center center">
+                        C
+                    </div>
+                </div>
+                <div fxFlex="25">
+                    <div class="four" fxFlexFill fxLayoutAlign="center center">
+                        D
+                    </div>
+                </div>
+                <div fxFlex="25">
+                    <div class="five" fxFlexFill fxLayoutAlign="center center">
+                        E
+                    </div>
+                </div>
+                <div fxFlex="25">
+                    <div class="six" fxFlexFill fxLayoutAlign="center center">
+                        F
+                    </div>
+                </div>
+                <div fxFlex="25">
+                    <div class="seven" fxFlexFill fxLayoutAlign="center center">
+                        G
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-footer class="bottomPad">
+        <div class="hint"></div>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-demo" (click)="toggleDirectionFlexRowFill()">
+    <mat-card-title>'Flex' to Fill Row</mat-card-title>
+    <mat-card-subtitle>Simple row using "flex" on 3rd element to fill available main axis. </mat-card-subtitle>
+    <mat-card-content>
+        <div class="containerX">
+            <div [fxLayout]="flexRowFillGrap.direction" (click)="toggleDirectionFlexRowFill()" class="colored box" style="cursor: pointer;">
+                <div [fxFlex]="20">fxFlex="20"</div>
+                <div fxFlex="60">fxFlex="60"</div>
+                <div fxFlex>fxFlex</div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="hint">&lt;div fxLayout="{{ flexRowFillGrap.direction }}" &gt;</div>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-demo" (click)="toggleDirectionflexRowFillWrap()">
+    <mat-card-title>'Flex' with Layout-Wrap</mat-card-title>
+    <mat-card-subtitle>Using "layout-wrap" to wrap positioned items within a layout container </mat-card-subtitle>
+    <mat-card-content>
+        <div class="containerX">
+            <div
+                [fxLayout]="flexRowFillWrap.direction + ' wrap'"
+                class="colored wrapped box"
+                (click)="toggleDirectionflexRowFillWrap()"
+                style="cursor: pointer;"
+            >
+                <div fxFlex="30">fxFlex="30"</div>
+                <div fxFlex="45">fxFlex="45"</div>
+                <div fxFlex="19">fxFlex="19"</div>
+                <div fxFlex="33">fxFlex="33"</div>
+                <div fxFlex="67">fxFlex="67"</div>
+                <div fxFlex="50">fxFlex="50"</div>
+                <div fxFlex>fxFlex</div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="hint">&lt;div fxLayout="{{ flexRowFillWrap.direction }}" &gt;</div>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-demo">
+    <mat-card-title>Flex Attribute Values</mat-card-title>
+    <mat-card-subtitle>Explore impact of non-numerical values for the 'fxFlex' API: </mat-card-subtitle>
+    <mat-card-content>
+        <div class="containerX">
+            <div fxLayout="row wrap" class="colored box nopad">
+                <div fxFlex="none">[fxFlex="none"]</div>
+                <div fxFlex>[fxFlex]</div>
+                <div fxFlex="nogrow">[fxFlex="nogrow"]</div>
+                <div fxFlex="grow">[fxFlex="grow"]</div>
+                <div fxFlex="initial">[fxFlex="initial"]</div>
+                <div fxFlex="auto">[fxFlex="auto"]</div>
+                <div fxFlex="noshrink">[fxFlex="noshrink"]</div>
+                <div fxFlex="0">[fxFlex="0"]</div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="hint">&lt;div fxLayout="row wrap" &gt;</div>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-demo">
+    <mat-card-title>Flex Offset Values</mat-card-title>
+    <mat-card-subtitle>Explore impact of values for the 'flex-offset' API:</mat-card-subtitle>
+    <mat-card-content>
+        <div class="containerX">
+            <div fxLayout="row" class="colored box nopad">
+                <div fxFlex="66" fxFlexOffset="15">[fxFlex="66"] [fxFlexOffset="15"]</div>
+                <div fxFlex>[fxFlex]</div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="hint">&lt;div fxLayout="row" &gt;</div>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-demo">
+    <mat-card-title>Flex with Align-Self</mat-card-title>
+    <mat-card-subtitle
+        >Click on 'target' to explore how 'flex-align' can change the alignment for a single element only.
+    </mat-card-subtitle>
+    <mat-card-content>
+        <div class="containerX">
+            <div class="box" style="height:200px;">
+                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" style="height:100%;padding: 5px;">
+                    <div fxFlex class="black one">1</div>
+                    <div fxFlex class="black two_h target" [fxFlexAlign]="alignTo" (click)="toggleAlignment()">target</div>
+                    <div fxFlex class="black three">3</div>
+                    <div fxFlex class="black four_h">4</div>
+                    <div fxFlex class="black fives">5</div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-footer style="width:95%;">
+        <div class="hint">&lt;div fxFlexAlign="{{ alignTo }}"&gt;</div>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-demo">
+    <mat-card-title>Direction support for RTL</mat-card-title>
+    <mat-card-subtitle>
+        Simple row using layout gap and flex offset to demonstrate changes in layout direction between rtl and ltr.
+    </mat-card-subtitle>
+    <mat-card-content fxLayout="column" fxLayoutGap="8px">
+        <div>
+            <button (click)="toggleDirectionLayoutWithDirection()" mat-raised-button>
+                Toggle direction
+            </button>
+        </div>
+        <div class="containerX">
+            <div fxLayout="row" class="colored box" fxLayoutGap="20px" [dir]="layoutWithDirection.direction" fxFlex>
+                <div fxFlexOffset="20px">item 1</div>
+                <div>item 2</div>
+                <div>item 3</div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="hint">&lt;div dir="{{ layoutWithDirection.direction }}" fxLayoutGap="20px"&gt;</div>
+    </mat-card-footer>
+</mat-card>
